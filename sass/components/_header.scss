@@ -1,0 +1,76 @@
+.hamburger-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+
+  background-color: $color-green;
+}
+.hamburger-menu > .title {
+  font-family: $ff-gilroy;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.222;
+
+  color: $color-white;
+}
+.menu-btn {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+
+  cursor: pointer;
+}
+.menu-btn > span {
+  position: absolute;
+  display: block;
+  width: 24px;
+  border: 1px solid $color-white;
+  background-color: $color-white;
+}
+.menu-btn > span::before,
+.menu-btn > span::after {
+  position: absolute;
+  top: -6px;
+  left: -1px;
+
+  content: '';
+
+  display: block;
+  width: 24px;
+  border: 1px solid $color-white;
+  background-color: $color-white;
+}
+.menu-btn > span::after {
+  top: 5px;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+  top: 40%;
+  right: 7%;
+}
+.checkbox:checked ~ .menu-btn > span::before {
+  transform: rotate(0);
+  top: 0;
+  opacity: 0;
+}
+.checkbox:checked ~ .menu-btn > span::after {
+  transform: rotate(90deg);
+  top: 0;
+}
+.checkbox:checked ~ .menu-btn > span {
+  transform: rotate(45deg);
+}
